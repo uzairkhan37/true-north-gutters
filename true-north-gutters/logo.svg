@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 200" role="img" aria-label="True North Gutters">
+  <defs>
+    <linearGradient id="metal" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#d6dde4"/>
+      <stop offset="50%" stop-color="#8a96a3"/>
+      <stop offset="100%" stop-color="#5c6b7a"/>
+    </linearGradient>
+    <linearGradient id="metalLight" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#eef1f4"/>
+      <stop offset="100%" stop-color="#a6b1bc"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Compass star -->
+  <g transform="translate(60 100)">
+    <!-- white halo -->
+    <circle r="42" fill="#ffffff"/>
+    <!-- vertical points -->
+    <polygon points="0,-40 8,0 0,40 -8,0" fill="#0B2545"/>
+    <!-- horizontal points -->
+    <polygon points="-40,0 0,8 40,0 0,-8" fill="#0B2545"/>
+    <!-- highlights -->
+    <polygon points="0,-40 4,0 0,0" fill="#1a3a66"/>
+    <polygon points="40,0 0,4 0,0" fill="#1a3a66"/>
+    <!-- diagonals (smaller) -->
+    <polygon points="0,0 20,-20 0,-6 -6,0" fill="#22487a" opacity="0.5"/>
+    <polygon points="0,0 -20,20 0,6 6,0" fill="#22487a" opacity="0.5"/>
+    <!-- center -->
+    <circle r="3" fill="#ffffff"/>
+  </g>
+
+  <!-- Wordmark -->
+  <g font-family="'Playfair Display', Georgia, serif" fill="#0B2545">
+    <text x="120" y="92" font-size="36" font-weight="800" letter-spacing="-0.5">True<tspan font-weight="700">North</tspan></text>
+  </g>
+  <g font-family="'Inter', Helvetica, Arial, sans-serif" fill="#5c6b7a">
+    <text x="120" y="120" font-size="14" font-weight="700" letter-spacing="6">G U T T E R S</text>
+  </g>
+
+  <!-- Gutter section + downspout -->
+  <g transform="translate(120 135)">
+    <!-- horizontal gutter -->
+    <rect x="0" y="0" width="220" height="22" rx="3" fill="url(#metal)" stroke="#3b4754" stroke-width="0.8"/>
+    <rect x="0" y="0" width="220" height="5" fill="url(#metalLight)" opacity="0.9"/>
+    <!-- end cap -->
+    <rect x="218" y="0" width="4" height="22" fill="#3b4754"/>
+    <!-- downspout elbow -->
+    <path d="M150 22 L150 38 Q150 44 156 44 L172 44 L172 60" fill="none" stroke="url(#metal)" stroke-width="14" stroke-linecap="butt"/>
+    <path d="M150 22 L150 38 Q150 44 156 44 L172 44 L172 60" fill="none" stroke="#3b4754" stroke-width="0.8"/>
+    <!-- highlight stripe on downspout -->
+    <path d="M148 24 L148 38 Q148 46 156 46 L170 46" fill="none" stroke="rgba(255,255,255,0.45)" stroke-width="2"/>
+  </g>
+</svg>
