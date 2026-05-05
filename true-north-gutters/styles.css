@@ -330,15 +330,21 @@ p  { color: var(--ink-soft); margin: 0 0 1em; }
   position: relative;
   display: grid;
   place-items: center;
+  min-width: 0;          /* allow this grid item to shrink instead of overflowing */
+  width: 100%;
+  max-width: 100%;
+  overflow: visible;
 }
 .compass {
-  width: min(420px, 100%);
+  width: min(360px, 100%);
+  max-width: 100%;
   height: auto;
   filter: drop-shadow(0 30px 50px rgba(11,37,69,.25));
   animation: float 8s ease-in-out infinite;
 }
 .compass__rose {
-  transform-origin: 0 0;
+  transform-origin: center;     /* spin around the geometric center of the rose */
+  transform-box: fill-box;      /* "center" is relative to the rose's own bounding box */
   animation: rose 18s linear infinite;
 }
 @keyframes float {
@@ -352,7 +358,10 @@ p  { color: var(--ink-soft); margin: 0 0 1em; }
 .gutter-art {
   position: absolute;
   bottom: 24px;
-  width: 70%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(70%, 280px);
+  max-width: 100%;
   filter: drop-shadow(0 14px 22px rgba(11,37,69,.18));
 }
 .droplet {
@@ -730,6 +739,11 @@ p  { color: var(--ink-soft); margin: 0 0 1em; }
 .why__grid .why__card.reveal:nth-child(4) { transition-delay: .24s; }
 
 /* ---------- Responsive ---------- */
+@media (max-width: 1100px) {
+  .hero__inner { gap: 36px; }
+  .compass { width: min(300px, 100%); }
+}
+
 @media (max-width: 960px) {
   .hero { padding: 60px 0 70px; }
   .hero__inner {

@@ -118,13 +118,15 @@
           <circle cx="200" cy="200" r="170" fill="url(#g1)" stroke="url(#metal)" stroke-width="4"/>
           <!-- inner ring -->
           <circle cx="200" cy="200" r="135" fill="none" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
-          <!-- compass star (rotates) -->
-          <g class="compass__rose" transform="translate(200 200)">
-            <polygon points="0,-130 18,0 0,130 -18,0" fill="url(#metal)"/>
-            <polygon points="-130,0 0,18 130,0 0,-18" fill="#cfd6df" opacity="0.9"/>
-            <polygon points="0,-130 12,0 0,0" fill="#fff"/>
-            <polygon points="0,130 -12,0 0,0" fill="#0B2545"/>
-            <circle r="10" fill="#0B2545" stroke="#fff" stroke-width="2"/>
+          <!-- compass star (centered in dial; inner group rotates) -->
+          <g transform="translate(200 200)">
+            <g class="compass__rose">
+              <polygon points="0,-130 18,0 0,130 -18,0" fill="url(#metal)"/>
+              <polygon points="-130,0 0,18 130,0 0,-18" fill="#cfd6df" opacity="0.9"/>
+              <polygon points="0,-130 12,0 0,0" fill="#fff"/>
+              <polygon points="0,130 -12,0 0,0" fill="#0B2545"/>
+              <circle r="10" fill="#0B2545" stroke="#fff" stroke-width="2"/>
+            </g>
           </g>
           <!-- N marker -->
           <text x="200" y="55" text-anchor="middle" font-family="Inter,sans-serif" font-size="22" font-weight="800" fill="#fff">N</text>
